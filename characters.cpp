@@ -1,12 +1,12 @@
 # include <iostream>
 using namespace std;
-class Robots{
+class Charachters{
     protected:
     string name;
     private:
     int health =100;
     public:
-    Robots(string n) : name(n) {}
+    Charachters(string n) : name(n) {}
     string getName() {
         return name;
     }
