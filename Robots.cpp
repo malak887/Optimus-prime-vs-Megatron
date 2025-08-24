@@ -21,10 +21,12 @@ int Robots:: get_health() {
 string  Robots::get_name() {
    return name;
 }
-int Robots::attack(Weopon we) {
-  if(we.shot(we.get_accuracy())){
-   
-    return health-we.get_demage();;
-  }
-  else return health ;
+
+void Robots::attack(Robots &r1, Weopon we) {
+    if (we.shot(we.get_accuracy())) {
+        r1.health -= we.get_demage();
+        cout << "Shot successful! " << r1.get_name()  << " takes " << we.get_demage() << " damage." << endl;
+    } else {
+        cout << "Shot missed!" << endl;
+    }
 }
