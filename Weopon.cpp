@@ -26,7 +26,7 @@ bool Weopon:: shot (int accuracy){
  srand(time(0));
     int num = (rand() % 100) + 1;
 if (num>accuracy)return false;
-else true;
+else return true;
 }
 
 

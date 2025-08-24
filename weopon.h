@@ -20,8 +20,8 @@ int get_demage();
 int get_accuracy();
 Weopon();
 
-Weopon (string name ,int demage,int accuracy){};
-bool shot (int accuracy){};
+Weopon (string name ,int demage,int accuracy);
+bool shot (int accuracy);
 };
 
 
