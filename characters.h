@@ -7,6 +7,7 @@
 #include "Weopon.h"
 
 using namespace std;
+class Robots;   // Forward declaration
 
 class Characters {
 protected:
@@ -17,7 +18,7 @@ public:
     Characters(string name); 
 
     string get_name();  
-   virtual int attack(Weopon)= 0;
+  virtual void attack(class Robots &r1, Weopon we) = 0;
    
 };
 
@@ -32,7 +33,7 @@ Weopon w[3];
 
 int get_health();
 string get_name();
-int attack( Weopon) override;
+ void attack(Robots &r1, Weopon we) override;
 };
 
 #endif
