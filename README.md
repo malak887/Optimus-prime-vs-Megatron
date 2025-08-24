@@ -8,8 +8,9 @@
 - [About](#about)  
 - [Project Structure](#project-structure)  
 - [Building & Running](#building--running)  
+- [Design & Architecture](#design--architecture)
 - [Usage Example](#usage-example)  
-- [Design & Architecture](#design--architecture)  
+  
 
 
 ---
@@ -38,10 +39,54 @@ Project documentation
 
 ## Building & Running:
 To run the source file:
-`` bash 
+``
 g++ main.cpp characters.cpp Robots.cpp Weopon.cpp -o main
+``
+
+``
 ./main
-`` bash
+``
+
+## Design & Architecture
+
+1. Characters (Abstract Base Class)
+  - Represents a general character in the battle.
+  - Attributes:
+    - string name → character’s name
+  - Methods:
+    - get_name() → returns the name
+    - attack(Robots &r1, Weopon we) → pure virtual, implemented by subclasses
+
+- Robots (Subclass of Characters)
+  - Represents battle robots (Optimus Prime, Megatron).
+  - Attributes:
+    - int health = 100 → initial health
+    - Weopon w[3] → array of 3 weapons
+  - Methods:
+    - Constructor → initializes name and weapons
+    - get_health() → returns current health
+    - get_name() → overridden from Characters
+    - attack(Robots &r1, Weopon we) → executes attack on another robot:
+      - If shot hits → reduces opponent’s health
+      - If missed → prints "Shot missed!"
+
+- Weopon Class
+  - Represents a robot’s weapon.
+  - Attributes:
+    - string name → weapon name
+    - int damage → attack damage
+    - int accuracy → hit probability (percentage)
+  - Methods:
+    - get_name(), get_damage(), get_accuracy()
+    - shot(int accuracy) → generates random number to check hit success
+
+- Main.cpp (Battle Simulation)
+  - Creates two robots (Optimus Prime & Megatron) with 3 weapons each
+  - Displays robots’ weapons and health
+  - Runs a turn-based battle loop:
+  - Each turn, one robot selects a weapon and attacks
+  - Health decreases if attack hits
+  - When a robot’s health ≤ 0 → the opponent is declared the winner
 
 ## Usage Example: 
 ```
