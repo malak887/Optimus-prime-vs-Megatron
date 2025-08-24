@@ -1,10 +1,25 @@
   
-#include "characters.h"
+#include "Weopon.h"
 
 
+Weopon:: Weopon() {
+
+}
+string Weopon:: get_name() {
+   return name;
+
+}
+int Weopon:: get_demage() {
+   return demage;
+
+}   
+int Weopon:: get_accuracy() {
+   return accuracy;
+
+}
 Weopon :: Weopon (string name ,int demage,int accuracy){
     this->accuracy=accuracy;
-    this->damage=demage;
+    this->demage=demage;
     this->name=name;
 }
 bool Weopon:: shot (int accuracy){
