@@ -19,10 +19,10 @@ int Robots:: get_health() {
 string  Robots::get_name() {
    return name;
 }
-int Robots::attack(Weopon w) {
-  if(w.shot(w.get_accuracy())){
+int Robots::attack(Weopon we) {
+  if(we.shot(we.get_accuracy())){
    
-    return health-w.get_demage();;
+    return health-we.get_demage();;
   }
   else return health ;
 }
