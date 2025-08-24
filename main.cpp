@@ -14,14 +14,16 @@ void display_health(Robots r1){
 }
 bool ifloser(Robots r1, Robots r2){
     if(r1.get_health()<=0){
+        cout<<"///////////////////////////////////////////////"<<endl;
         cout<<r1.get_name()<<" has been defeated!"<<endl;
         cout<<r2.get_name()<<" wins the battle!"<<endl;
+        cout<<"///////////////////////////////////////////////"<<endl;
         return true;
     }
     return false;}
 int main() { 
     Robots Optimus("Optimus Prime", Weopon("Ion rifl", 6, 100), Weopon("Energon swords", 12, 80), Weopon("Shoulder canon", 45, 25));
-    Robots Megatron("Megatron", Weopon("Fusion cannon", 9, 90), Weopon("Tank Mode", 60, 15), Weopon("Fusion Sword", 60, 15));
+    Robots Megatron("Megatron", Weopon("Fusion cannon", 9, 90), Weopon("Tank Mode", 60, 15), Weopon("Fusion Sword", 18, 70));
    cout<<"Welcome to the battle between Optimus Prime and Megatron!"<<endl;
    cout<<"Each robot has 3 weopons to choose from:"<<endl; 
     cout<<"Optimus Primes Weopons:"<<endl;
