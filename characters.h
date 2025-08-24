@@ -4,6 +4,8 @@
 #include <cstdlib>  
 #include <ctime>  
 #include <string>
+#include "Weopon.h"
+
 using namespace std;
 
 class Characters {
@@ -15,7 +17,7 @@ public:
     Characters(string name); 
 
     string get_name();  
-   virtual void attack() = 0;
+   virtual int attack(Weopon)= 0;
    
 };
 
@@ -26,20 +28,11 @@ int health=100;
 public:
 Robots ();
 Robots(string name);
+Weopon w;
 
 int get_health();
 string get_name();
+int attack( Weopon) override {};
 };
 
-
-class Weopon {
-private:
-int damage;
-int accuracy;
-public:
-string name;
-
-Weopon (string name ,int demage,int accuracy){};
-bool shot (int accuracy){};
-};
 #endif
