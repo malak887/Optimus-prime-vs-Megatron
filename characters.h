@@ -7,11 +7,11 @@ using namespace std;
 class Characters {
 protected:
     string name;
-    int health =100;
 
 public:
-    Characters(string name);   
-    int get_health();
+    Characters();   
+    Characters(string name); 
+
     string get_name();  
    virtual void attack() = 0;
    
