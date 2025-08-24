@@ -7,9 +7,11 @@ using namespace std;
  Robots::Robots (){
 
 }
-Robots::Robots(string name) {
+Robots::Robots(string name, Weopon w1, Weopon w2, Weopon w3) {
 this->name=name;
-   
+this->w[0]=w1;
+this->w[1]=w2;  
+this->w[2]=w3;
 }
 
 int Robots:: get_health() {

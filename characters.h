@@ -27,8 +27,8 @@ int health=100;
 
 public:
 Robots ();
-Robots(string name);
-Weopon w;
+Robots(string name, Weopon w1, Weopon w2, Weopon w3);
+Weopon w[3];
 
 int get_health();
 string get_name();
