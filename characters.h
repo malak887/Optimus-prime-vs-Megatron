@@ -32,7 +32,7 @@ Weopon w[3];
 
 int get_health();
 string get_name();
-int attack( Weopon) override {};
+int attack( Weopon) override;
 };
 
 #endif
